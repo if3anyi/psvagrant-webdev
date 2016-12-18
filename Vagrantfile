@@ -3,4 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "wed-dev"
 
   config.vm.provision "shell", path: "provision.sh"
+
+  #port forwarding
+  config.vm.network "forwarded_port", guest: 80, host: 8080, id: "nginx"
 end
